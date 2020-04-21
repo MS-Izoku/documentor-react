@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
 import { baseURL } from "./services/asyncHelper";
 import "./App.css";
+
+//#region Pages
+import CreateAccountPage from "./Pages/CreateAccountPage";
+import Error404Page from "./Pages/Error404Pages";
+////#endregion
 
 class App extends Component {
   state = {
@@ -22,7 +28,12 @@ class App extends Component {
 
   logOut = () => {
     localStorage.removeItem("token");
-    this.setState({ loggedIn: false });
+    this.setState({
+      loggedIn: false,
+      user: {
+        username: "",
+      },
+    });
   };
 
   componentDidMount() {
@@ -45,15 +56,22 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <Router>
         <AppHeader
           user={this.state.user}
           loggedIn={this.state.loggedIn}
           login={this.logIn}
           logOut={this.logOut}
         />
+        <Route path="/"></Route>
+        <Route path="/create-account">
+          <CreateAccountPage login={this.login} />
+        </Route>
+        <Route path="*">
+          <Error404Page />
+        </Route>
         <p>This is the content body</p>
-      </>
+      </Router>
     );
   }
 }
