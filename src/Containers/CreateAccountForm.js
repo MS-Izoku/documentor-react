@@ -9,6 +9,13 @@ export default class CreateAccountForm extends Component {
       password: "",
       passwordConfirmation: "",
       email: "",
+
+      errors: {
+        usernameError: null,
+        passwordError: null,
+        passwordConfirmationError: null,
+        emailError: null,
+      },
     };
   }
 
@@ -19,7 +26,7 @@ export default class CreateAccountForm extends Component {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "applicaiton/json",
+          "Content-Type": "application/json",
         },
         body: {
           username: this.state.username,
@@ -30,6 +37,7 @@ export default class CreateAccountForm extends Component {
         .then((resp) => resp.json())
         .then((json) => {
           this.props.login(json);
+          localStorage.setItem("token", json.token);
         });
   };
 
@@ -47,18 +55,44 @@ export default class CreateAccountForm extends Component {
     const [password, passwordConfirmation] = this.state;
     if (passwordConfirmation === password) {
       return true;
+
+      // quick validation checks, handle it on backend?
     } else return false;
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input name="username" type="text" />
-        <input name="password" type="password" />
-        <input name="passwordConfirmation" type="password" />
-        <input name="email" type="text" />
+      <form onSubmit={this.handleSubmit} id="sign-up">
+        <label htmlFor="username">Username:</label>
+        <input name="username" type="text" autoComplete="username"/>
+        {this.state.errors.usernameError === null
+          ? null
+          : ErrorHandler(this.state.errors.usernameError)}
+
+        <label htmlFor="password">Password: </label>
+        <input name="password" type="password" autoComplete="new-password" />
+        {this.state.errors.passwordError === null
+          ? null
+          : ErrorHandler(this.state.errors.passwordError)}
+
+        <label htmlFor="passwordConfirmation">Confirm Password:</label>
+        <input name="passwordConfirmation" type="password"/>
+        {this.state.errors.passwordConfirmationError === null
+          ? null
+          : ErrorHandler(this.state.errors.passwordConfirmationError)}
+
+        <label htmlFor="email">Email:</label>
+        <input name="email" type="text" autoComplete="email"/>
+        {this.state.errors.emailError === null
+          ? null
+          : ErrorHandler(this.state.errors.emailError)}
+
         <input type="submit" />
       </form>
     );
   }
 }
+
+const ErrorHandler = (errorMessage) => {
+  return <div>{errorMessage}</div>;
+};

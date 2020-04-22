@@ -40,9 +40,10 @@ class LoginForm extends Component {
   };
 
   render() {
+    console.log(this.props.style)
     return (
-      <div>
-        <form id="login" onSubmit={this.handleSubmit}>
+      <>
+        <form id="login" onSubmit={this.handleSubmit} style={this.props.style ? this.props.style : {}}>
           <input
             name="username"
             type="text"
@@ -68,9 +69,8 @@ class LoginForm extends Component {
             Twitter
           </button>
         </div>
-        <div>Sign Up</div>
         <Link to="/create-account">Sign Up</Link>
-      </div>
+      </>
     );
   }
 }

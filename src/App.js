@@ -6,24 +6,21 @@ import "./App.css";
 
 //#region Pages
 import CreateAccountPage from "./Pages/CreateAccountPage";
-import Error404Page from "./Pages/Error404Pages";
+import Error404Page from "./Pages/Error404Page";
+import HomePage from './Pages/HomePage'
 ////#endregion
 
 class App extends Component {
   state = {
     user: {
-      username: "",
-      profile_img: "",
+      username: undefined,
+      profile_img: undefined,
     },
     loggedIn: window.localStorage.token !== undefined,
   };
 
   logIn = (userObj) => {
     this.setState({ loggedIn: true, user: userObj });
-
-    debugger;
-
-    console.log("Logging In", userObj.username);
   };
 
   logOut = () => {
@@ -63,13 +60,12 @@ class App extends Component {
           login={this.logIn}
           logOut={this.logOut}
         />
-        <Route path="/"></Route>
+        {/* <Route path="*" component={Error404Page} /> */}
+        <Route exact path="/" component={HomePage}/>
         <Route path="/create-account">
           <CreateAccountPage login={this.login} />
         </Route>
-        <Route path="*">
-          <Error404Page />
-        </Route>
+
         <p>This is the content body</p>
       </Router>
     );
