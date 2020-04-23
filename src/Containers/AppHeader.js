@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { MDBIcon } from "mdbreact";
-import LoginForm from "./LoginForm.js";
-// import CreateAccountForm from './CreateAccountForm'
 
 export default class AppHeader extends Component {
   constructor() {

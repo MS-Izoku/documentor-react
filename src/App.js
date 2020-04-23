@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
 import { baseURL } from "./services/asyncHelper";
-import LoginForm from "./Containers/LoginForm";
+import LoginModal from "./Containers/LoginModal";
 import "./App.css";
 
 //#region Pages
@@ -67,7 +67,7 @@ class App extends Component {
           logOut={this.logOut}
           toggleLoginModal={this.toggleLoginModal}
         />
-        <LoginForm
+        <LoginModal
           login={this.login}
           toggleLoginModal={this.toggleLoginModal}
           style={{

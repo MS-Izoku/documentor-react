@@ -1,84 +1,45 @@
 import React, { Component } from "react";
-import { baseURL } from "../services/asyncHelper";
-import { Link } from "react-router-dom";
 import { MDBIcon } from "mdbreact";
 
-class LoginForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: "",
-      password: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    fetch(baseURL + "login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password,
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        window.localStorage.setItem("token", json.jwt);
-        this.props.login(json.user);
-      });
-  };
-
-  handleOauthLogin = (event) => {
-    // loginUserOAuth();
-  };
-
-  ignoreClick = (event) =>{
-    event.stopPropagation();
-  }
-
+export default class LoginForm extends Component {
   render() {
     return (
-      <div
-        id="login-area"
-        style={this.props.style ? this.props.style : {}}
-        className="page-overlay"
-        onClick={this.props.toggleLoginModal}
+      <form
+        className=""
+        onSubmit={this.handleSubmit}
+        onClick={this.ignoreClick}
       >
-        <form id="login" className="nu-form w-25" onSubmit={this.handleSubmit} onClick={this.ignoreClick}>
+        <header>
+          <h2>Sign In</h2>
+        </header>
+        <div>
+          <label htmlFor="username">Username</label>
           <input
             name="username"
             type="text"
-            className="nu-input"
             onChange={this.handleChange}
             placeholder="username"
           />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
           <input
             name="password"
             type="password"
-            className="nu-input"
             onChange={this.handleChange}
             placeholder="password"
           />
-          <input type="submit" className="nu-button" />
+        </div>
 
-          <div id="oauth-login">
-            <MDBIcon fab icon="google" size="lg" />
-            <MDBIcon fab icon="facebook-square" size="lg" />
-            <MDBIcon fab icon="twitter-square" size="lg" />
-          </div>
-          <Link to="/create-account">Sign Up</Link>
-        </form>
-      </div>
+        <div id="oauth-login">
+          <MDBIcon fab icon="google" size="lg" />
+          <MDBIcon fab icon="facebook-square" size="lg" />
+          <MDBIcon fab icon="twitter-square" size="lg" />
+        </div>
+        <footer>
+          <input type="submit" />
+        </footer>
+      </form>
     );
   }
 }
-
-export default LoginForm;
