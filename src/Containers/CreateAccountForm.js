@@ -62,32 +62,33 @@ export default class CreateAccountForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} id="sign-up">
+      
+      <form onSubmit={this.handleSubmit} id="sign-up" className="nu-form">
         <label htmlFor="username">Username:</label>
-        <input name="username" type="text" autoComplete="username"/>
+        <input name="username" type="text" autoComplete="username" className="nu-input"/>
         {this.state.errors.usernameError === null
           ? null
           : ErrorHandler(this.state.errors.usernameError)}
 
         <label htmlFor="password">Password: </label>
-        <input name="password" type="password" autoComplete="new-password" />
+        <input name="password" type="password" autoComplete="new-password" className="nu-input"/>
         {this.state.errors.passwordError === null
           ? null
           : ErrorHandler(this.state.errors.passwordError)}
 
         <label htmlFor="passwordConfirmation">Confirm Password:</label>
-        <input name="passwordConfirmation" type="password"/>
+        <input name="passwordConfirmation" type="password" className="nu-input"/>
         {this.state.errors.passwordConfirmationError === null
           ? null
           : ErrorHandler(this.state.errors.passwordConfirmationError)}
 
         <label htmlFor="email">Email:</label>
-        <input name="email" type="text" autoComplete="email"/>
+        <input name="email" type="text" autoComplete="email" className="nu-input"/>
         {this.state.errors.emailError === null
           ? null
           : ErrorHandler(this.state.errors.emailError)}
 
-        <input type="submit" />
+        <input type="submit" className="nu-button"/>
       </form>
     );
   }

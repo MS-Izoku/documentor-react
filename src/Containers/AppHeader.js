@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MDBIcon } from "mdbreact";
 import LoginForm from "./LoginForm.js";
 // import CreateAccountForm from './CreateAccountForm'
 
@@ -10,39 +11,13 @@ export default class AppHeader extends Component {
     };
   }
 
-  toggleModal = () => {
-    this.setState({ loginModalActive: !this.state.loginModalActive });
-  };
-
   render() {
     return (
       <header id="page-header">
-        {/* <div
-          id="login-area"
-        >
-          {this.props.loggedIn ? (
-            <UserArea
-              user={this.props.user}
-              logOut={this.props.logOut}
-              toggleModal={this.toggleModal}
-            />
-          ) : (
-
-          )}
-        </div> */}
         <UserArea
           user={this.props.user}
           logOut={this.props.logOut}
-          toggleModal={this.toggleModal}
-        />
-
-        <LoginForm
-          login={this.props.login}
-          style={{
-            color: "blue",
-            background: "yellow",
-            visibility: this.state.loginModalActive ? "" : "hidden"
-          }}
+          toggleLoginModal={this.props.toggleLoginModal}
         />
       </header>
     );
@@ -53,13 +28,19 @@ const UserArea = (props) => {
   return (
     <div id="user-area">
       <button
+        className="nu-button"
         onClick={() => {
           localStorage.token === undefined
-            ? props.toggleModal()
+            ? props.toggleLoginModal()
             : props.logOut();
         }}
       >
         {props.user.username === undefined ? "Log In" : props.user.username}
+        {props.user.profilePic !== undefined ? (
+          <img src={props.user.profilePic} alt="profile-pic" />
+        ) : (
+          <MDBIcon icon="user-circle" />
+        )}
       </button>
     </div>
   );

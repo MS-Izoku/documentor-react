@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { baseURL } from '../services/asyncHelper'
-import {Link} from 'react-router-dom'
+import { baseURL } from "../services/asyncHelper";
+import { Link } from "react-router-dom";
+import { MDBIcon } from "mdbreact";
 
 class LoginForm extends Component {
   constructor() {
@@ -39,40 +40,45 @@ class LoginForm extends Component {
     // loginUserOAuth();
   };
 
+  ignoreClick = (event) =>{
+    event.stopPropagation();
+  }
+
   render() {
-    console.log(this.props.style)
     return (
-      <>
-        <form id="login" onSubmit={this.handleSubmit} style={this.props.style ? this.props.style : {}}>
+      <div
+        id="login-area"
+        style={this.props.style ? this.props.style : {}}
+        className="page-overlay"
+        onClick={this.props.toggleLoginModal}
+      >
+        <form id="login" className="nu-form w-25" onSubmit={this.handleSubmit} onClick={this.ignoreClick}>
           <input
             name="username"
             type="text"
+            className="nu-input"
             onChange={this.handleChange}
             placeholder="username"
           />
           <input
             name="password"
             type="password"
+            className="nu-input"
             onChange={this.handleChange}
             placeholder="password"
           />
-          <input type="submit" />
+          <input type="submit" className="nu-button" />
+
+          <div id="oauth-login">
+            <MDBIcon fab icon="google" size="lg" />
+            <MDBIcon fab icon="facebook-square" size="lg" />
+            <MDBIcon fab icon="twitter-square" size="lg" />
+          </div>
+          <Link to="/create-account">Sign Up</Link>
         </form>
-        <div id="oauth-login">
-          <button name="google" onClick={this.handleOauthLogin}>
-            Google
-          </button>
-          <button name="facebook" onClick={this.handleOauthLogin}>
-            FB
-          </button>
-          <button name="twitter" onClick={this.handleOauthLogin}>
-            Twitter
-          </button>
-        </div>
-        <Link to="/create-account">Sign Up</Link>
-      </>
+      </div>
     );
   }
 }
 
-export default LoginForm
+export default LoginForm;

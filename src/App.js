@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
 import { baseURL } from "./services/asyncHelper";
+import LoginForm from "./Containers/LoginForm";
 import "./App.css";
 
 //#region Pages
 import CreateAccountPage from "./Pages/CreateAccountPage";
 import Error404Page from "./Pages/Error404Page";
-import HomePage from './Pages/HomePage'
+import HomePage from "./Pages/HomePage";
 ////#endregion
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
       profile_img: undefined,
     },
     loggedIn: window.localStorage.token !== undefined,
+    loginModalActive: false,
   };
 
   logIn = (userObj) => {
@@ -31,6 +33,10 @@ class App extends Component {
         username: "",
       },
     });
+  };
+
+  toggleLoginModal = () => {
+    this.setState({ loginModalActive: !this.state.loginModalActive });
   };
 
   componentDidMount() {
@@ -59,9 +65,16 @@ class App extends Component {
           loggedIn={this.state.loggedIn}
           login={this.logIn}
           logOut={this.logOut}
+          toggleLoginModal={this.toggleLoginModal}
         />
-        {/* <Route path="*" component={Error404Page} /> */}
-        <Route exact path="/" component={HomePage}/>
+        <LoginForm
+          login={this.login}
+          toggleLoginModal={this.toggleLoginModal}
+          style={{
+            visibility: this.state.loginModalActive ? "" : "hidden",
+          }}
+        />
+        <Route exact path="/" component={HomePage} />
         <Route path="/create-account">
           <CreateAccountPage login={this.login} />
         </Route>
