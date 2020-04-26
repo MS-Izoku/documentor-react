@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
             name="username"
             type="text"
             onChange={this.handleChange}
-            placeholder="username"
+            placeholder="Username"
           />
         </div>
         <div>
@@ -27,7 +27,7 @@ export default class LoginForm extends Component {
             name="password"
             type="password"
             onChange={this.handleChange}
-            placeholder="password"
+            placeholder="Password"
           />
         </div>
 

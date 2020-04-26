@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
 import { baseURL } from "./services/asyncHelper";
 import LoginModal from "./Containers/LoginModal";
-import "./App.css";
+import Sidebar from './Components/Sidebar'
+//import "./App.css";
+import './css/Neumorphic.css'
 
 //#region Pages
 import CreateAccountPage from "./Pages/CreateAccountPage";
@@ -19,6 +21,7 @@ class App extends Component {
     },
     loggedIn: window.localStorage.token !== undefined,
     loginModalActive: false,
+    sidebarActive: false
   };
 
   logIn = (userObj) => {
@@ -38,6 +41,11 @@ class App extends Component {
   toggleLoginModal = () => {
     this.setState({ loginModalActive: !this.state.loginModalActive });
   };
+
+  toggleSidebar = () =>{
+    console.log("oi")
+    this.setState({sidebarActive: !this.state.sidebarActive})
+  }
 
   componentDidMount() {
     if (localStorage.token)
@@ -66,7 +74,9 @@ class App extends Component {
           login={this.logIn}
           logOut={this.logOut}
           toggleLoginModal={this.toggleLoginModal}
+          toggleSidebar={this.toggleSidebar}
         />
+        <Sidebar toggled={this.state.sidebarActive}/>
         <LoginModal
           login={this.login}
           toggleLoginModal={this.toggleLoginModal}

@@ -1,0 +1,164 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --background-color: rgb(35, 35, 35);
+    --primary-font-color: rgba(255, 255, 255, 1);
+    --submit: rgb(63, 172, 85);
+    /*#region Shadow Properties (Outset)*/
+    /* In order of exection */
+    --outset-shadow-offset-x: 0.5em;
+    --outset-shadow-offset-y: 0.5em;
+    --outset-shadow-spread: 0px;
+    --outset-shadow-blur: 10px;
+    --outset-shadow-color: rgba(0, 0, 0, 0.25);
+    /* Output */
+    --outset-shadow: var(--outset-shadow-offset-x) var(--outset-shadow-offset-y) var(--outset-shadow-blur) var(--outset-shadow-spread) var(--outset-shadow-color);
+    --outset-shadow-reverse: calc(var(--outset-shadow-offset-x * -1)) calc(var(--outset-shadow-offset-y)) var(--outset-shadow-blur) var(--outset-shadow-spread) var(--outset-shadow-color);
+    /*#endregion*/
+    /*#region Highlight Properties (Outset)*/
+    /* In order of exection */
+    --outset-highlight-offset-x: -0.25em;
+    --outset-highlight-offset-y: -0.275em;
+    --outset-highlight-spread: 0px;
+    --outset-highlight-blur: 10px;
+    --outset-highlight-color: rgba(255, 255, 255, 0.313);
+    /* Output */
+    --outset-highlight-reverse: calc(var(--outset-highlight-offset-x) * -1) calc(var(--outset-highlight-offset-y * -1)) var(--outset-highlight-blur) var(--outset-highlight-color) var(--outset-highlight-spread);
+    --outset-highlight: var(--outset-highlight-offset-x) var(--outset-highlight-offset-y) var(--outset-highlight-blur) var(--outset-highlight-spread) var(--outset-highlight-color);
+    /*#endregion*/
+    /*#region Shadow Properties (INSET)*/
+    /* In order of exection */
+    --inset-shadow-offset-x: 0.25em;
+    --inset-shadow-offset-y: 0.1em;
+    --inset-shadow-spread: 0px;
+    --inset-shadow-blur: 10px;
+    --inset-shadow-color: rgba(0, 0, 0, 0.122);
+    /* Output */
+    --inset-shadow: var(--inset-shadow-offset-x) var(--inset-shadow-offset-y) var(--inset-shadow-blur) var(--inset-shadow-spread) var(--inset-shadow-color) inset;
+
+    /*#endregion*/
+    /*#region Highlight Properties (INSET)*/
+    /* In order of exection */
+    --inset-highlight-offset-x: 0.5em;
+    --inset-highlight-offset-y: 0.5em;
+    --inset-highlight-spread: 0px;
+    --inset-highlight-blur: 5px;
+    --inset-highlight-color: rgb(255, 255, 255);
+    /* Output */
+    --inset-highlight: var(--inset-highlight-offset-x) var(--inset-highlight-offset-y) var(--inset-highlight-blur) var(--inset-highlight-spread) var(--inset-highlight-color) inset;
+
+    /*#endregion*/
+    /*#region Outputs*/
+    --outset-box-shadow: var(--outset-shadow), var(--outset-highlight);
+    --outset-box-shadow-reverse: var(--outset-box-shadow-reverse) , var(--outset-highlight-reverse);
+    --inset-box-shadow: var(--inset-shadow), var(--inset-highlight);
+    /*#endregion */
+}
+
+body {
+    background: var(--background-color);
+    color: var(--primary-font-color);
+}
+
+.neu-container {
+    box-shadow: var(--outset-box-shadow);
+}
+
+.neu-container-inset{
+    box-shadow: var(--inset-box-shadow);
+}
+
+.logo{
+    border-radius: 50%;
+    box-shadow: var(--outset-box-shadow);
+}
+
+button,
+input {
+    padding: 0.5em;
+    margin: 0.25em;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    border-radius: 1em;
+    border: none;
+    box-shadow: var(--inset-box-shadow);
+}
+
+input[type="text"]:focus , input[type="password"]:focus{
+    outline: none;
+}
+
+label {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+input[type="submit"],
+button {
+    border: none;
+    border-radius: 3em;
+    font-weight: bold;
+    background: inherit;
+    box-shadow: var(--outset-box-shadow);
+    transition: box-shadow 0.15s, background 0.15s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: var(--outset-box-shadow-reverse);
+    transition: box-shadow 0.15s , background 0.15s;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background: var(--submit);
+    min-height: 3em;
+    box-shadow: var(--outset-shadow), var(--outset-highlight);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
+    border-radius: 0.75em;
+    padding: 2.5%;
+    padding-top: 0;
+    margin: 2%;
+    box-shadow: var(--outset-box-shadow);
+}
+
+form header {
+    display: flex;
+    justify-content: center;
+}
+
+form footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+form div {
+    --margin-v: 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: var(--margin-v) 0 var(--margin-v) 0;
+}
+
+aside{
+    background: red;
+    position: absolute;
+    min-height: 100%;
+    height: 100%;
+    width: 256px;
+}
+
+aside.hidden{
+    display: none;
+}

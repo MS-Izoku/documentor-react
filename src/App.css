@@ -1,24 +1,4 @@
-* {
-    --background-color: rgb(231, 231, 231);
-    --font-color: rgb(0, 0, 0);
-    /*#region Nu Variables */
-    --nu-text: rgb(255, 255, 255);
-    --nu-shadow-spread: 5px;
-    --nu-shadow-v: 6px;
-    --nu-shadow-h: 6px;
-    --nu-shadow-color: rgba(0, 0, 0, 0.25);
-    --nu-highlight-color: rgba(255, 255, 255, 0.25);
-    --nu-shadow: var(--nu-shadow-h) var(--nu-shadow-v) var(--nu-shadow-spread) 0 var(--nu-shadow-color), -8px -8px 12px 0 var(--nu-highlight-color);
-    --nu-indent: var(--nu-shadow-h) var(--nu-shadow-v) var(--nu-shadow-spread) 0 var(--nu-shadow-color) inset, -8px -8px 12px 0 var(--nu-highlight-color) inset;
-    /*#endregion */
-}
-
-body {
-    background-color: var(--background-color);
-}
-
 #page-header {
-    box-shadow: var(--nu-shadow);
     display: flex;
 }
 
@@ -87,83 +67,6 @@ body {
 
 /*#region Nu */
 
-.nu-button {
-    background: var(--background-color);
-    border-radius: 0.5em;
-    color: var(--nu-text);
-    border: none;
-}
 
-.nu-form {
-    background: var(--background-color);
-    border-radius: 2em;
-    padding: 2%;
-    color: var(--nu-text);
-    border: none;
-    box-shadow: var(--nu-shadow);
-}
-
-.nu-input {
-    background: white;
-    border-radius: 3em;
-    padding: 3%;
-    color: black;
-    border: none;
-    margin: 3%;
-}
-
-button , input{
-  border: none;
-  border-radius: 1em;
-  padding: 0.5em;
-  margin: 0.25em;
-}
-
-input[type="submit"]{
-  width: 100%;
-  transition: background 0.25s;
-}
-
-input[type="submit"]:hover , button:hover{
-  transition: background 0.25s;
-  background: red;
-}
-
-form{
-  display: flex;
-  flex-direction: column;
-  min-width: 25%;
-  box-shadow: var(--nu-shadow);
-  border-radius: 1em;
-  padding: 2.5%;
-  padding-top: 0;
-  margin: 2%;
-}
-
-form header {
-  display: flex;
-  justify-content: center;
-}
-
-form footer{
-  margin-top: auto;
-  display: flex;
-  justify-content: center;
-}
-
-form div{
-  --margin-v: 0.5em;
-  background: rgba(0 , 0 , 0 , 0);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: var(--margin-v) 0 var(--margin-v) 0;
-  transition: background;
-}
-
-form div:hover{
-  background: var(--nu-shadow-color);
-  transition: background;
-}
 
 /*#endregion */

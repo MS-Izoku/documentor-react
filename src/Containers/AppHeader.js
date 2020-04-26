@@ -12,6 +12,7 @@ export default class AppHeader extends Component {
   render() {
     return (
       <header id="page-header">
+        <button onClick={this.props.toggleSidebar}>SideBar</button>
         <UserArea
           user={this.props.user}
           logOut={this.props.logOut}

@@ -86,7 +86,7 @@ export default class CreateAccountForm extends Component {
             name="password"
             type="password"
             autoComplete="new-password"
-            placeholder="password"
+            placeholder="Password"
           />
         </div>
 
@@ -99,7 +99,7 @@ export default class CreateAccountForm extends Component {
           <input
             name="passwordConfirmation"
             type="password"
-            placeholder="password"
+            placeholder="Confirm Password"
           />
         </div>
         {this.state.errors.passwordConfirmationError === null
@@ -112,7 +112,7 @@ export default class CreateAccountForm extends Component {
             name="email"
             type="text"
             autoComplete="email"
-            placeholder="email"
+            placeholder="Email Address"
           />
         </div>
         {this.state.errors.emailError === null
