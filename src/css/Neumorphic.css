@@ -1,7 +1,7 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --background-color: rgb(35, 35, 35);
-    --primary-font-color: rgba(255, 255, 255, 1);
+    --background-color: rgb(214, 214, 214);
+    --primary-font-color: rgb(44, 44, 44);
     --submit: rgb(63, 172, 85);
     /*#region Shadow Properties (Outset)*/
     /* In order of exection */
@@ -34,7 +34,6 @@
     --inset-shadow-color: rgba(0, 0, 0, 0.122);
     /* Output */
     --inset-shadow: var(--inset-shadow-offset-x) var(--inset-shadow-offset-y) var(--inset-shadow-blur) var(--inset-shadow-spread) var(--inset-shadow-color) inset;
-
     /*#endregion*/
     /*#region Highlight Properties (INSET)*/
     /* In order of exection */
@@ -45,34 +44,47 @@
     --inset-highlight-color: rgb(255, 255, 255);
     /* Output */
     --inset-highlight: var(--inset-highlight-offset-x) var(--inset-highlight-offset-y) var(--inset-highlight-blur) var(--inset-highlight-spread) var(--inset-highlight-color) inset;
-
     /*#endregion*/
     /*#region Outputs*/
     --outset-box-shadow: var(--outset-shadow), var(--outset-highlight);
-    --outset-box-shadow-reverse: var(--outset-box-shadow-reverse) , var(--outset-highlight-reverse);
+    --outset-box-shadow-reverse: var(--outset-box-shadow-reverse), var(--outset-highlight-reverse);
     --inset-box-shadow: var(--inset-shadow), var(--inset-highlight);
     /*#endregion */
+}
+
+/* BLOG */
+*{
+    --outset-container-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
+    --inset-container-shadow: 3px 3px 5px rgb(119, 119, 125) inset, -3px -3px 5px rgb(236, 237, 241) inset, 3px 3px 8px rgb(209, 209, 209) inset;
+    --inset-container-bevel: -3px -3px 5px rgba(29, 29, 29, 0.211) inset, 3px 3px 5px rgba(255, 255, 255, 0.585) inset, 3px 3px 8px rgb(209, 209, 209) inset;
 }
 
 body {
     background: var(--background-color);
     color: var(--primary-font-color);
+    padding: 1%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
 }
 
 .neu-container {
     box-shadow: var(--outset-box-shadow);
 }
 
-.neu-container-inset{
+.neu-container-inset {
     box-shadow: var(--inset-box-shadow);
 }
 
-.logo{
+.logo {
     border-radius: 50%;
     box-shadow: var(--outset-box-shadow);
 }
 
-button,
+
+/* button,
 input {
     padding: 0.5em;
     margin: 0.25em;
@@ -149,9 +161,9 @@ form div {
     flex-direction: column;
     text-align: center;
     margin: var(--margin-v) 0 var(--margin-v) 0;
-}
+} */
 
-aside{
+aside {
     background: red;
     position: absolute;
     min-height: 100%;
@@ -159,6 +171,88 @@ aside{
     width: 256px;
 }
 
-aside.hidden{
+.hidden {
     display: none;
 }
+
+.raw-neu-container {
+    box-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
+    border-radius: 1em;
+    width: 256px;
+    /* Here for sizing */
+}
+
+.raw-neu-container.inset {
+    /* padding: 1%; */
+    box-shadow: 3px 3px 5px rgb(119, 119, 125) inset, -3px -3px 5px rgb(236, 237, 241) inset, 3px 3px 8px rgb(209, 209, 209) inset;
+}
+
+.neu-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.neu-form a {
+    text-align: center;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+input[type="text"],
+input[type="password"] {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--inset-container-shadow)
+}
+
+input[type="submit"] , button {
+    height: 3em;
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--outset-container-shadow) , var(--inset-container-bevel);
+    background: inherit;
+
+    transition: background 0.2s , box-shadow 0.2s;
+}
+
+input[type="submit"]{
+    background: rgb(117, 224, 138);
+    color: white;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background: rgb(63, 172, 85);
+}
+
+input[type="submit"]:active{
+    box-shadow: none;
+    background: white;
+}
+
+input[type="submit"]:focus , button:focus{
+    outline: none;
+}
+
+label {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+/* .cont-1{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+.cont-1 {
+    padding: 3%;
+    display: flex;
+}
+
+.cont-2 {
+    margin: auto;
+    padding: 12px;
+} */

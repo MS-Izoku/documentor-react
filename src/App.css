@@ -53,10 +53,12 @@
     display: flex;
     position: fixed;
     background: rgba(0, 0, 0, 0.25);
+    pointer-events: all;
 }
 
 .page-overlay * {
     margin: auto;
+    pointer-events: none;
 }
 
 .w-25 {

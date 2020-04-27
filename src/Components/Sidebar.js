@@ -10,7 +10,7 @@ export default class SideBar extends Component {
     }
   render() {
     return (
-      <div className="page-overlay">
+      <div className={"page-overlay " + (this.props.toggled ? "" : "hidden")} onClick={this.props.toggleSidebar}>
         <aside className={this.props.toggled ? "" : "hidden"}>
           SIDE BAR
           <ul>

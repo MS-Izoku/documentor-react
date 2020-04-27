@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
 import { baseURL } from "./services/asyncHelper";
 import LoginModal from "./Containers/LoginModal";
-import Sidebar from './Components/Sidebar'
+import Sidebar from "./Components/Sidebar";
 //import "./App.css";
-import './css/Neumorphic.css'
+import "./css/Neumorphic.css";
 
 //#region Pages
 import CreateAccountPage from "./Pages/CreateAccountPage";
@@ -21,7 +21,7 @@ class App extends Component {
     },
     loggedIn: window.localStorage.token !== undefined,
     loginModalActive: false,
-    sidebarActive: false
+    sidebarActive: false,
   };
 
   logIn = (userObj) => {
@@ -42,10 +42,9 @@ class App extends Component {
     this.setState({ loginModalActive: !this.state.loginModalActive });
   };
 
-  toggleSidebar = () =>{
-    console.log("oi")
-    this.setState({sidebarActive: !this.state.sidebarActive})
-  }
+  toggleSidebar = () => {
+    this.setState({ sidebarActive: !this.state.sidebarActive });
+  };
 
   componentDidMount() {
     if (localStorage.token)
@@ -76,7 +75,10 @@ class App extends Component {
           toggleLoginModal={this.toggleLoginModal}
           toggleSidebar={this.toggleSidebar}
         />
-        <Sidebar toggled={this.state.sidebarActive}/>
+        <Sidebar
+          toggled={this.state.sidebarActive}
+          toggleSidebar={this.toggleSidebar}
+        />
         <LoginModal
           login={this.login}
           toggleLoginModal={this.toggleLoginModal}
@@ -84,12 +86,57 @@ class App extends Component {
             visibility: this.state.loginModalActive ? "" : "hidden",
           }}
         />
+        <Route path="/404" component={Error404Page} />
         <Route exact path="/" component={HomePage} />
         <Route path="/create-account">
           <CreateAccountPage login={this.login} />
         </Route>
 
-        <p>This is the content body</p>
+        <div className="wrapper">
+          <div className="raw-neu-container third cont-1">
+            <p>I am a Outset!</p>
+            <form
+              className="neu-form"
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
+              <label htmlFor="username">Username</label>
+              <input type="text" placeholder="username" name="username" />
+              <label htmlFor="password">Password</label>
+              <input type="password" placeholder="password" name="password" />
+              <a href="#">Recover Account</a>
+              <input type="submit" />
+            </form>
+          </div>
+          <div className="raw-neu-container inset third cont-1">
+            <p>I am a Inset!</p>
+            <form className="neu-form">
+              <label htmlFor="username">Username</label>
+              <input type="text" placeholder="username" name="username" />
+              <label htmlFor="password">Password</label>
+              <input type="password" placeholder="password" name="password" />
+              <a href="#">Recover Account</a>
+              <input type="submit" />
+            </form>
+          </div>
+          <div className="raw-neu-container cont-1">
+            <div className="raw-neu-container inset cont-2">
+              <p>I am Layered!</p>
+              <form className="neu-form">
+                <label htmlFor="username">Username</label>
+                <input type="text" placeholder="username" name="username" />
+                <label htmlFor="password">Password</label>
+                <input type="password" placeholder="password" name="password" />
+                <a href="/">Recover Account</a>
+                <input type="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div className="logo" />
+        <button>BUTTON</button>
       </Router>
     );
   }
