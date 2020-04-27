@@ -5,7 +5,8 @@ export default class LoginForm extends Component {
   render() {
     return (
       <form
-        className=""
+        className="neu-form"
+        id="login-form"
         onSubmit={this.handleSubmit}
         onClick={this.ignoreClick}
       >
@@ -36,9 +37,9 @@ export default class LoginForm extends Component {
           <MDBIcon fab icon="facebook-square" size="lg" />
           <MDBIcon fab icon="twitter-square" size="lg" />
         </div>
-        <footer>
+  
           <input type="submit" />
-        </footer>
+     
       </form>
     );
   }

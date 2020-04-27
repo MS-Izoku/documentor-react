@@ -62,7 +62,11 @@ export default class CreateAccountForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        onSubmit={this.handleSubmit}
+        className="neu-form"
+        id="create-account-form"
+      >
         <header>
           <h2>Sign Up</h2>
         </header>
@@ -119,9 +123,7 @@ export default class CreateAccountForm extends Component {
           ? null
           : ErrorHandler(this.state.errors.emailError)}
 
-        <footer>
-          <input type="submit" />
-        </footer>
+        <input type="submit" />
       </form>
     );
   }

@@ -92,51 +92,8 @@ class App extends Component {
           <CreateAccountPage login={this.login} />
         </Route>
 
-        <div className="wrapper">
-          <div className="raw-neu-container third cont-1">
-            <p>I am a Outset!</p>
-            <form
-              className="neu-form"
-              onSubmit={(event) => {
-                event.preventDefault();
-              }}
-            >
-              <label htmlFor="username">Username</label>
-              <input type="text" placeholder="username" name="username" />
-              <label htmlFor="password">Password</label>
-              <input type="password" placeholder="password" name="password" />
-              <a href="#">Recover Account</a>
-              <input type="submit" />
-            </form>
-          </div>
-          <div className="raw-neu-container inset third cont-1">
-            <p>I am a Inset!</p>
-            <form className="neu-form">
-              <label htmlFor="username">Username</label>
-              <input type="text" placeholder="username" name="username" />
-              <label htmlFor="password">Password</label>
-              <input type="password" placeholder="password" name="password" />
-              <a href="#">Recover Account</a>
-              <input type="submit" />
-            </form>
-          </div>
-          <div className="raw-neu-container cont-1">
-            <div className="raw-neu-container inset cont-2">
-              <p>I am Layered!</p>
-              <form className="neu-form">
-                <label htmlFor="username">Username</label>
-                <input type="text" placeholder="username" name="username" />
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="password" name="password" />
-                <a href="/">Recover Account</a>
-                <input type="submit" />
-              </form>
-            </div>
-          </div>
-        </div>
-
         <div className="logo" />
-        <button>BUTTON</button>
+        <button className="circle">X</button>
       </Router>
     );
   }
