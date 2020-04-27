@@ -12,12 +12,14 @@ export default class AppHeader extends Component {
   render() {
     return (
       <header id="page-header">
+        <div className="wrapper">
         <button onClick={this.props.toggleSidebar}>SideBar</button>
         <UserArea
           user={this.props.user}
           logOut={this.props.logOut}
           toggleLoginModal={this.props.toggleLoginModal}
         />
+        </div>
       </header>
     );
   }
@@ -26,6 +28,7 @@ export default class AppHeader extends Component {
 const UserArea = (props) => {
   return (
     <div id="user-area">
+      <img id="avatar" alt="avatar" src=""/>
       <button
         className="nu-button"
         onClick={() => {

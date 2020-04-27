@@ -1,9 +1,33 @@
+
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #page-header{
     display: flex;
+    width: 102%;
+}
+
+#page-header .wrapper{
+    width: 100%;
     justify-content: space-between;
-    width: 110%;
-    position: absolute;
-    top: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.page-area{
+    margin-top: 64px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+#user-area{
+    display: flex;
+    flex-direction: column;
+    width: 64px;
 }
 
 #login-modal{
@@ -38,11 +62,25 @@ input[type="submit"]{
 }
 /*#endregion */
 
-/*#region Form Formatting by ID */
-
-#login-form , #create-account-form{
-    height: 100%;
-    min-width: 256px;
+#page-footer{
+    margin-top: 12px;
+    padding: 12px 24px 12px 24px;
+    display: flex;
+    justify-content: center;
 }
 
+#page-footer div{
+    min-width: 50%;
+}
+
+/*#region Form Formatting by ID */
+#login-form , #create-account-form{
+    min-height: 100%;
+    min-width: 256px;
+    padding: 1%;
+}
+
+#login-form h2 , #create-account-form h2{
+    text-align: center;
+}
 /*#endregion*/

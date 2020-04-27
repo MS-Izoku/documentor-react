@@ -64,13 +64,13 @@ export default class CreateAccountForm extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="neu-form"
+        className="neu-form neu-container"
         id="create-account-form"
       >
-        <header>
-          <h2>Sign Up</h2>
-        </header>
-        <div>
+       
+          <h2 className="title">Sign Up</h2>
+        
+      
           <label htmlFor="username">Username</label>
           <input
             name="username"
@@ -78,13 +78,13 @@ export default class CreateAccountForm extends Component {
             autoComplete="username"
             placeholder="Username"
           />
-        </div>
+       
 
         {this.state.errors.usernameError === null
           ? null
           : ErrorHandler(this.state.errors.usernameError)}
 
-        <div>
+   
           <label htmlFor="password">Password</label>
           <input
             name="password"
@@ -92,25 +92,25 @@ export default class CreateAccountForm extends Component {
             autoComplete="new-password"
             placeholder="Password"
           />
-        </div>
+      
 
         {this.state.errors.passwordError === null
           ? null
           : ErrorHandler(this.state.errors.passwordError)}
 
-        <div>
+      
           <label htmlFor="passwordConfirmation">Confirm Password</label>
           <input
             name="passwordConfirmation"
             type="password"
             placeholder="Confirm Password"
           />
-        </div>
+    
         {this.state.errors.passwordConfirmationError === null
           ? null
           : ErrorHandler(this.state.errors.passwordConfirmationError)}
 
-        <div>
+       
           <label htmlFor="email">Email</label>
           <input
             name="email"
@@ -118,7 +118,7 @@ export default class CreateAccountForm extends Component {
             autoComplete="email"
             placeholder="Email Address"
           />
-        </div>
+      
         {this.state.errors.emailError === null
           ? null
           : ErrorHandler(this.state.errors.emailError)}

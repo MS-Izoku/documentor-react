@@ -9,6 +9,8 @@
     --outset-container-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
     --inset-container-shadow: 3px 3px 5px rgb(119, 119, 125) inset, -3px -3px 5px rgb(236, 237, 241) inset, 3px 3px 8px rgb(209, 209, 209) inset;
     --inset-container-bevel: -3px -3px 5px rgba(29, 29, 29, 0.211) inset, 3px 3px 5px rgba(255, 255, 255, 0.585) inset, 3px 3px 8px rgb(209, 209, 209) inset;
+
+    --header-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
 }
 
 
@@ -58,12 +60,6 @@ aside {
 .neu-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.neu-form div{
-    display: flex;
-    flex-direction: column;
 }
 
 .neu-form a {
@@ -72,6 +68,7 @@ aside {
     text-decoration: none;
 }
 
+/*#region Inputs */
 input[type="text"],
 input[type="password"] {
     border: none;
@@ -107,6 +104,7 @@ input[type="submit"]:active{
 input[type="submit"]:focus , button:focus{
     outline: none;
 }
+/*#endregion  */
 
 label {
     text-align: center;
@@ -127,6 +125,7 @@ label {
     color: var(--inverse-font-color);
 }
 
+/*#region Identifiable Elements  */
 #page-header{
     --padding-v: 1%;
     --padding-h: 3%;
@@ -135,3 +134,15 @@ label {
     padding-bottom: var(--padding-v);
 }
 
+#page-footer{
+    background: var(--inverse-background-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: var(--outset-container-shadow);
+}
+/*#endregion */
+
+
+/*#region Coloration */
+/*#endregion */

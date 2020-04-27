@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppHeader from "./Containers/AppHeader";
+import AppFooter from "./Containers/AppFooter";
 import { baseURL } from "./services/asyncHelper";
 import LoginModal from "./Containers/LoginModal";
 import Sidebar from "./Components/Sidebar";
@@ -79,13 +80,7 @@ class App extends Component {
           toggled={this.state.sidebarActive}
           toggleSidebar={this.toggleSidebar}
         />
-        <LoginModal
-          login={this.login}
-          toggleLoginModal={this.toggleLoginModal}
-          style={{
-            visibility: this.state.loginModalActive ? "" : "hidden",
-          }}
-        />
+        
         <Route path="/404" component={Error404Page} />
         <Route exact path="/" component={HomePage} />
         <Route path="/create-account">
@@ -94,6 +89,7 @@ class App extends Component {
 
         <div className="logo" />
         <button className="circle">X</button>
+        <AppFooter />
       </Router>
     );
   }

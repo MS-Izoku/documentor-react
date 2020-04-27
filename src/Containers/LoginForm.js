@@ -5,15 +5,15 @@ export default class LoginForm extends Component {
   render() {
     return (
       <form
-        className="neu-form"
+        className="neu-form neu-container"
         id="login-form"
         onSubmit={this.handleSubmit}
         onClick={this.ignoreClick}
       >
-        <header>
-          <h2>Sign In</h2>
-        </header>
-        <div>
+     
+          <h2 className="title">Sign In</h2>
+      
+   
           <label htmlFor="username">Username</label>
           <input
             name="username"
@@ -21,8 +21,8 @@ export default class LoginForm extends Component {
             onChange={this.handleChange}
             placeholder="Username"
           />
-        </div>
-        <div>
+      
+      
           <label htmlFor="password">Password</label>
           <input
             name="password"
@@ -30,12 +30,12 @@ export default class LoginForm extends Component {
             onChange={this.handleChange}
             placeholder="Password"
           />
-        </div>
+      
 
         <div id="oauth-login">
-          <MDBIcon fab icon="google" size="lg" />
-          <MDBIcon fab icon="facebook-square" size="lg" />
-          <MDBIcon fab icon="twitter-square" size="lg" />
+          <a href="#">Google</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
         </div>
   
           <input type="submit" />
