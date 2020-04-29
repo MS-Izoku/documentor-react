@@ -1,0 +1,35 @@
+.grid{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    /* border: 5px solid blue; */
+}
+
+.grid .grid-item{
+    /* border: 5px solid red; */
+    --side-margin-total: 0.5%;
+    margin-left: calc(var(--side-margin-total) / 2);
+    margin-right: calc(var(--side-margin-total) / 2);
+
+}
+
+.grid .grid-item.grid{
+    /* border: 5px solid yellow; */
+}
+
+.grid.d-2x2 .grid-item{
+    width: 48%;
+}
+
+.grid.d-3x3 .grid-item{
+    width: 32%;
+
+}
+
+.grid.d-1x2 .grid-item{
+    width: 48%;
+}
+
+
+

@@ -7,13 +7,13 @@ export default () => {
           <div>
         <ul>
           <li>
-            <Link>Report a Bug</Link>
+            <Link to="/report-bug">Report a Bug</Link>
           </li>
           <li>
-            <Link>Contact an Admin</Link>
+            <Link to="/contact-admin">Contact an Admin</Link>
           </li>
           <li>
-            <Link>Resources</Link>
+            <Link to="/resources">Resources</Link>
           </li>
         </ul>
       </div>

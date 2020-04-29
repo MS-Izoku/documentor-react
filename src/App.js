@@ -5,8 +5,7 @@ import AppFooter from "./Containers/AppFooter";
 import { baseURL } from "./services/asyncHelper";
 import LoginModal from "./Containers/LoginModal";
 import Sidebar from "./Components/Sidebar";
-//import "./App.css";
-import "./css/Neumorphic.css";
+
 
 //#region Pages
 import CreateAccountPage from "./Pages/CreateAccountPage";
@@ -86,9 +85,6 @@ class App extends Component {
         <Route path="/create-account">
           <CreateAccountPage login={this.login} />
         </Route>
-
-        <div className="logo" />
-        <button className="circle">X</button>
         <AppFooter />
       </Router>
     );

@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+//#region CSS 
 import './index.css';
 import './App.css'
 import './css/Neumorphic.css'
+import "./css/QuickFlexgrid.css"
+//#endregion
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

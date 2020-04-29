@@ -1,4 +1,3 @@
-
 #root{
     display: flex;
     flex-direction: column;
@@ -24,11 +23,19 @@
     width: 100%;
 }
 
-#user-area{
+/*#region User Navbar */
+#user-nav{
     display: flex;
     flex-direction: column;
     width: 64px;
+    align-items: center;
 }
+
+#user-nav p{
+    margin: 3px 0 0 0;
+}
+
+/*#endregion */
 
 #login-modal{
 
@@ -84,3 +91,66 @@ input[type="submit"]{
     text-align: center;
 }
 /*#endregion*/
+
+#avatar{
+    width: 48px;
+    height: 48px;
+}
+
+
+
+/*#region Simple Spacing / Formatting */
+/* Seperate this off when it gets too big */
+
+.w-25{
+    width: 25%;
+    min-width: 25%;
+}
+
+.w-50{
+    width: 50%;
+    min-width: 50%;
+}
+
+.w-75{
+    width: 75%;
+    min-width: 75%;
+}
+
+.mx-1{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.m-1{
+    margin: 1%;
+}
+
+.p-1{
+    padding: 1%;
+}
+
+.height-1{
+    height: 50px;
+    min-height: 50px;
+}
+
+.wrapper{
+    display: flex;
+}
+
+.wrapper.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper.space-around{
+    justify-content: space-around;
+    align-items: space-around;
+
+}
+
+.wrapper.space-between{
+    justify-content: space-between;
+    align-items: space-between;
+}

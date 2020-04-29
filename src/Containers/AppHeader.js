@@ -27,8 +27,12 @@ export default class AppHeader extends Component {
 
 const UserArea = (props) => {
   return (
-    <div id="user-area">
-      <img id="avatar" alt="avatar" src=""/>
+    <div id="user-nav">
+      <div id="avatar">
+        {props.user.profilePic ? <img src={props.user.profilePic} alt="avatar-pic"/> : null}
+      </div>
+      <p>{props.user.username !== undefined ? props.user.username : "Log In"}</p>
+      {/* <img id="avatar" alt="avatar" src=""/>
       <button
         className="nu-button"
         onClick={() => {
@@ -43,7 +47,7 @@ const UserArea = (props) => {
         ) : (
           <MDBIcon icon="user-circle" />
         )}
-      </button>
+      </button> */}
     </div>
   );
 };
