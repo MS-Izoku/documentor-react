@@ -37,13 +37,6 @@
 
 /*#endregion */
 
-#login-modal{
-
-}
-
-.p-10{
-    padding: 1%;
-}
 
 /*#region Page Spacing/Formatting */
 .space-around{
@@ -68,6 +61,7 @@ input[type="submit"]{
     width: 100%;
 }
 /*#endregion */
+
 
 #page-footer{
     margin-top: 12px;
@@ -98,10 +92,8 @@ input[type="submit"]{
 }
 
 
-
-/*#region Simple Spacing / Formatting */
 /* Seperate this off when it gets too big */
-
+/*#region Simple Spacing / Formatting */
 .w-25{
     width: 25%;
     min-width: 25%;
@@ -154,3 +146,4 @@ input[type="submit"]{
     justify-content: space-between;
     align-items: space-between;
 }
+/*#endregion */

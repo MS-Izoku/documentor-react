@@ -31,20 +31,11 @@
 }
 
 .grid .grid-item{
-    /* border: 5px solid red; */
-
     margin-left: calc(var(--side-margin-total) / 2);
     margin-right: calc(var(--side-margin-total) / 2);
-
-}
-
-.grid .grid-item.grid{
-    /* border: 5px solid yellow; */
 }
 
 .grid.d-1x3 .grid-item{
-    /* --base-width: 32%;
-    width: calc( var(--base-width) - (var(--side-margin-total) * 2)); */
     width: 32%;
 }
 

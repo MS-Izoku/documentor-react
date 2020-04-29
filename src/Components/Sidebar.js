@@ -15,7 +15,7 @@ export default class SideBar extends Component {
           SIDE BAR
           <ul>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/homae">Home</Link>
             </li>
             <li>
               <Link to="/projects">Projects</Link>

@@ -11,6 +11,7 @@ import Sidebar from "./Components/Sidebar";
 import CreateAccountPage from "./Pages/CreateAccountPage";
 import Error404Page from "./Pages/Error404Page";
 import HomePage from "./Pages/HomePage";
+import ForumHomePage from "./Pages/ForumHomePage";
 ////#endregion
 
 class App extends Component {
@@ -82,6 +83,7 @@ class App extends Component {
         
         <Route path="/404" component={Error404Page} />
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/forums" component={ForumHomePage} />
         <Route path="/create-account">
           <CreateAccountPage login={this.login} />
         </Route>

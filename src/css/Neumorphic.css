@@ -1,5 +1,14 @@
+@font-face{
+    /* --filepath: '../fonts/Lato'; */
+    font-family: "Lato";
+    src: url('./fonts/lato-regular-webfont.woff') format('woff'),
+        url('./fonts/lato-italic-webfont.woff') format('woff'),
+        url('./fonts/lato-bold-webfont.woff') format('woff')
+}
+
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Lato';
     --background-color: rgb(214, 214, 214);
     --inverse-background-color: rgb(125, 125 , 125);
     --primary-font-color: rgb(44, 44, 44);
