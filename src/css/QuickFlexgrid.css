@@ -1,7 +1,6 @@
 *{
     --side-margin-total: 0.5%;
     --thirds: calc( var(--base-width) - (var(--side-margin-total) * 4));
-    --halves: 
 }
 
 .grid{
@@ -13,8 +12,8 @@
 }
 
 .jumbotron{
-    width: calc(100% - var(--side-margin-total));
     display: flex;
+    width: calc(100% - var(--side-margin-total));
     margin-left: calc(var(--side-margin-total) / 2);
     margin-right: calc(var(--side-margin-total) / 2);
 
@@ -51,4 +50,13 @@
     width: 48%;
 }
 
-
+.page-overlay{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+}
+.page-overlay *{
+    pointer-events: initial;
+}

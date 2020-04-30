@@ -4,7 +4,7 @@ const HomePage = (props) => {
   return (
     <div className="page-area" id="home-page">
       <div className="jumbotron neu-container">
-        <div>
+        <div className="neu-container inset wrapper col">
           <h2>Welcome to Documentor!</h2>
             <p>Documentor is an application meant to help writers, worldbuilders, game designers, and anyone else who needs a complex and interconnected system for their writing.</p>
         </div>

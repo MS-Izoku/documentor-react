@@ -75,11 +75,12 @@ class App extends Component {
           logOut={this.logOut}
           toggleLoginModal={this.toggleLoginModal}
           toggleSidebar={this.toggleSidebar}
+          sidebarActive={this.state.sidebarActive}
         />
-        <Sidebar
+        {/* <Sidebar
           toggled={this.state.sidebarActive}
           toggleSidebar={this.toggleSidebar}
-        />
+        /> */}
         
         <Route path="/404" component={Error404Page} />
         <Route exact path="/" component={HomePage} />

@@ -7,12 +7,17 @@
 }
 
 * {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* Inverse colors are for night mode and highlighting */
     font-family: 'Lato';
     --background-color: rgb(214, 214, 214);
     --inverse-background-color: rgb(125, 125 , 125);
     --primary-font-color: rgb(44, 44, 44);
     --inverse-font-color: rgb(225 , 225 , 225);
+
+    --hover-background-color: rgb(218, 218, 218);
+
+    --highlight-background-color: rgb(111, 111, 111);
+
     --submit: rgb(63, 172, 85);
 
     --outset-container-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
@@ -20,6 +25,10 @@
     --inset-container-bevel: -3px -3px 5px rgba(29, 29, 29, 0.211) inset, 3px 3px 5px rgba(255, 255, 255, 0.585) inset, 3px 3px 8px rgb(209, 209, 209) inset;
 
     --header-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
+
+    --highlight-shadow: 3px 3px 5px rgb(141, 141, 150), -3px -3px 5px rgba(234, 236, 240, 0.932), 3px 3px 8px rgb(209, 209, 209);
+    --highlight-shadow-inset: 3px 3px 5px rgb(141, 141, 150) inset, -3px -3px 5px rgba(234, 236, 240, 0.932) inset, 3px 3px 8px rgb(209, 209, 209) inset;
+
 }
 
 
@@ -46,11 +55,11 @@ body {
 }
 
 aside {
-    background: red;
     position: absolute;
     min-height: 100%;
     height: 100%;
     width: 256px;
+    background: var(--inverse-background-color);
 }
 
 .hidden {
@@ -95,6 +104,10 @@ input[type="submit"] , button {
     transition: background 0.2s , box-shadow 0.2s;
 }
 
+.neu-container.inset.bevel{
+    box-shadow: var(--inset-container-bevel);
+}
+
 input[type="submit"]{
     background: rgb(117, 224, 138);
     color: white;
@@ -105,9 +118,14 @@ input[type="submit"]:hover{
     background: rgb(63, 172, 85);
 }
 
-input[type="submit"]:active{
-    box-shadow: none;
-    background: white;
+button:hover{
+    background: rgb(255 , 255 , 255);
+}
+
+input[type="submit"]:active , button:active{
+    box-shadow: var(--inset-container-shadow);
+    background: var(--inverse-background-color);
+    color: var(--inverse-font-color);
 }
 
 input[type="submit"]:focus , button:focus{
@@ -191,3 +209,15 @@ label {
     background: none;
     box-shadow: none;
 }
+
+.bg-main{
+    background: var(--background-color);
+    color: var(--primary-font-color);
+}
+
+
+.bg-inverse{
+    background: var(--inverse-background-color);
+    color: var(--inverse-font-color);
+}
+

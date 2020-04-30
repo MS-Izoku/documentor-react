@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { MDBIcon} from 'mdbreact'
 
 export default class SideBar extends Component {
     constructor(){
@@ -10,12 +11,13 @@ export default class SideBar extends Component {
     }
   render() {
     return (
-      <div className={"page-overlay " + (this.props.toggled ? "" : "hidden")} onClick={this.props.toggleSidebar}>
+      <>
+      <button><MDBIcon icon="bars" /></button>
+      <div className={"page-overlay"}>
         <aside className={this.props.toggled ? "" : "hidden"}>
-          SIDE BAR
           <ul>
             <li>
-              <Link to="/homae">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/projects">Projects</Link>
@@ -29,6 +31,7 @@ export default class SideBar extends Component {
           </ul>
         </aside>
       </div>
+      </>
     );
   }
 }
