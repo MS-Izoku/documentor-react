@@ -60,6 +60,7 @@ aside {
     height: 100%;
     width: 256px;
     background: var(--inverse-background-color);
+    z-index: 0;
 }
 
 .hidden {

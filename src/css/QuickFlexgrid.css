@@ -11,14 +11,14 @@
     /* border: 5px solid blue; */
 }
 
-.jumbotron{
+/* .jumbotron{
     display: flex;
     width: calc(100% - var(--side-margin-total));
     margin-left: calc(var(--side-margin-total) / 2);
     margin-right: calc(var(--side-margin-total) / 2);
 
     min-height: 128px;
-}
+} */
 
 .jumbotron div{
     margin: auto;
@@ -55,8 +55,15 @@
     position: absolute;
     height: 100%;
     top: 0;
-    pointer-events: none;
+    left: 0;
+    display: flex;
+    z-index: 3;
 }
+
 .page-overlay *{
-    pointer-events: initial;
+    /* pointer-events: initial; */
+}
+
+.ignore-click{
+    pointer-events: none;
 }

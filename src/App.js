@@ -36,6 +36,8 @@ class App extends Component {
       user: {
         username: "",
       },
+      sidebarActive: false,
+      loginModalActive: false,
     });
   };
 

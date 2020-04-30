@@ -195,6 +195,7 @@ input[type="submit"]{
 }
 
 #home-page .jumbotron{
+    background: inherit;
     width: 80%;
     justify-content: center;
     align-items: center;
@@ -212,9 +213,6 @@ input[type="submit"]{
 
 
 /* Sidebar */
-aside{
-}
-
 .ignore-click{
     pointer-events: none;
 }

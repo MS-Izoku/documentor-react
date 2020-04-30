@@ -14,11 +14,12 @@ export default class AppHeader extends Component {
 		return (
 			<header id="page-header">
 				<div className="wrapper">
-					<SideBar sidebarActive={this.props.sidebarActive} toggleSidebar={this.props.toggleSidebar} />
+					<SideBar toggled={this.props.sidebarActive} toggleSidebar={this.props.toggleSidebar} />
 					<UserArea
 						user={this.props.user}
 						logOut={this.props.logOut}
-						toggleLoginModal={this.props.toggleLoginModal}
+            toggleLoginModal={this.props.toggleLoginModal}
+            toggled={this.props.sidebarActive}
 					/>
 				</div>
 			</header>
