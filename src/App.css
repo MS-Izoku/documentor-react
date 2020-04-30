@@ -64,10 +64,10 @@ input[type="submit"]{
 
 
 #page-footer{
-    margin-top: 12px;
+    /* margin-top: 12px;
     padding: 12px 24px 12px 24px;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
 }
 
 #page-footer div{
@@ -146,4 +146,43 @@ input[type="submit"]{
     justify-content: space-between;
     align-items: space-between;
 }
+/*#endregion */
+
+
+/*#region Forums */
+
+#forum-home-page .wrapper{
+    --side-padding: 6px;
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+}
+
+#forum-nav{
+    width: 256px;
+    margin-right: 16px
+}
+
+#threads{
+    width: 100%;
+}
+
+#threads .thread{
+    --margin-v: 6px;
+    margin-top: var(--margin-v);
+    margin-bottom: var(--margin-v);
+    margin: calc(2 * var(--margin-v));
+    padding: 12px;
+}
+#threads h2{
+    margin: 0;
+}
+
+.like-count::before{
+    content: "* "
+}
+
+.comment-count::before{
+    content: "/ "
+}
+
 /*#endregion */

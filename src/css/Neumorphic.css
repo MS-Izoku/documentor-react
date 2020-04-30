@@ -145,7 +145,6 @@ label {
 
 #page-footer{
     background: var(--inverse-background-color);
-    position: absolute;
     bottom: 0;
     width: 100%;
     box-shadow: var(--outset-container-shadow);
@@ -167,4 +166,28 @@ label {
     width: 100%;
     height: 100%;
     margin: auto;
+}
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    box-shadow: var(--outset-box-shadow);
+    margin: 6px;
+    background: white;
+    border-radius: 12px;
+}
+
+.searchbar input[type="submit"]{
+    margin-bottom: 0px;
+    background: none;
+    box-shadow: none;
+
+    background: none;
+    color: black;
+    font-weight: inherit;
+}
+
+.searchbar input[type="text"].search-input{
+    background: none;
+    box-shadow: none;
 }
