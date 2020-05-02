@@ -79,10 +79,6 @@ class App extends Component {
           toggleSidebar={this.toggleSidebar}
           sidebarActive={this.state.sidebarActive}
         />
-        {/* <Sidebar
-          toggled={this.state.sidebarActive}
-          toggleSidebar={this.toggleSidebar}
-        /> */}
         
         <Route path="/404" component={Error404Page} />
         <Route exact path="/" component={HomePage} />

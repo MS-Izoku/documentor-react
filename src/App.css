@@ -127,25 +127,7 @@ input[type="submit"]{
     min-height: 50px;
 }
 
-.wrapper{
-    display: flex;
-}
 
-.wrapper.col{
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper.space-around{
-    justify-content: space-around;
-    align-items: space-around;
-
-}
-
-.wrapper.space-between{
-    justify-content: space-between;
-    align-items: space-between;
-}
 /*#endregion */
 
 

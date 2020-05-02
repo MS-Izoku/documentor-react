@@ -9,6 +9,8 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 //#endregion
 
+import "./css/App.scss"
+
 import './index.css';
 import './App.css'
 import './css/Neumorphic.css'

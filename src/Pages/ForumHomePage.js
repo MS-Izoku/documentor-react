@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBIcon } from "mdbreact";
+// import { MDBIcon } from "mdbreact";
 import Searchbar from '../Components/Searchbar'
 
 import ForumHomeThread from "../Containers/Forum/ForumHomeThread";

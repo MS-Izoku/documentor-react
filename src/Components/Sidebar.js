@@ -12,12 +12,20 @@ export default class SideBar extends Component {
 	render() {
 		return (
 			<>
-				<button onClick={this.props.toggleSidebar}>
-					<MDBIcon icon="bars" />
-				</button>
+				<div>
+					<div className="wrapper col">
+						<MDBIcon
+							icon="bars"
+							style={{ width: '64px', borderRadius: '0.25em', padding: '3px 12px 3px 12px' }}
+							className="text-shadow neu-container inset m-auto"
+							size="3x"
+						/>
+					</div>
+				</div>
+
 				<div className={'page-overlay ' + (this.props.toggled ? '' : 'hidden')}>
 					<aside className={this.props.toggled ? '' : 'hidden'}>
-						<ul>
+						<ul className="">
 							<li>
 								<Link to="/">Home</Link>
 							</li>
@@ -32,7 +40,7 @@ export default class SideBar extends Component {
 							</li>
 						</ul>
 					</aside>
-          <div className="w-100" onClick={this.props.toggleSidebar}/>
+					<div className="w-100 bg-info filler" onClick={this.props.toggleSidebar} />
 				</div>
 			</>
 		);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBIcon } from 'mdbreact';
+// import { MDBIcon } from 'mdbreact';
 import SideBar from '../Components/Sidebar';
 
 export default class AppHeader extends Component {
