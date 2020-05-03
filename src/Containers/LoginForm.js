@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
 				<label htmlFor="password">Password</label>
 				<input name="password" type="password" onChange={this.handleChange} placeholder="Password" />
 
-				<div id="oauth-login">
+				<div id="oauth-login" className="px-0">
 					<p className="text-center">Or with a Connect Account</p>
 					<div className="wrapper space-around w-100 mx-1 py-2 neu-container inset">
 						<a className="m-auto neu-container w-25 py-2 wrapper" href="#">

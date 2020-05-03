@@ -1,0 +1,207 @@
+@import url("./_neumorphic.scss");
+@import url("./_quickFlexgrid.scss");
+
+$dark-mode-active: true default;
+$background-color: rgb(200 , 200 , 200);
+$font-color: rgb(0 , 0 , 0);
+
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-header{
+    display: flex;
+    width: 102%;
+}
+
+#page-header .wrapper{
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.page-area{
+    margin-top: 64px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+/*#region User Navbar */
+#user-nav{
+    display: flex;
+    flex-direction: column;
+    width: 64px;
+    align-items: center;
+}
+
+#user-nav p{
+    margin: 3px 0 0 0;
+}
+
+/*#endregion */
+
+
+/*#region Page Spacing/Formatting */
+.space-around{
+    display: flex;
+    justify-content: space-evenly;
+}
+/*#endregion*/
+
+
+/*#region General Form Formatting */
+input{
+    margin-bottom: 12px;
+}
+
+input[type="text"] , input[type="password"]{
+    height: 6px;
+    padding: 16px;
+}
+
+input[type="submit"]{
+    margin-top: auto;
+    width: 100%;
+}
+/*#endregion */
+
+
+#page-footer{
+    /* margin-top: 12px;
+    padding: 12px 24px 12px 24px;
+    display: flex;
+    justify-content: center; */
+}
+
+#page-footer div{
+    min-width: 50%;
+}
+
+/*#region Form Formatting by ID */
+#login-form , #create-account-form{
+    min-height: 100%;
+    min-width: 256px;
+    padding: 1%;
+}
+
+#login-form h2 , #create-account-form h2{
+    text-align: center;
+}
+/*#endregion*/
+
+#avatar{
+    width: 48px;
+    height: 48px;
+}
+
+
+/* Seperate this off when it gets too big */
+/*#region Simple Spacing / Formatting */
+.w-25{
+    width: 25%;
+    min-width: 25%;
+}
+
+.w-50{
+    width: 50%;
+    min-width: 50%;
+}
+
+.w-75{
+    width: 75%;
+    min-width: 75%;
+}
+
+.mx-1{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.m-1{
+    margin: 1%;
+}
+
+.p-1{
+    padding: 1%;
+}
+
+.height-1{
+    height: 50px;
+    min-height: 50px;
+}
+
+
+/*#endregion */
+
+
+/*#region Forums */
+
+#forum-home-page .wrapper{
+    --side-padding: 6px;
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+}
+
+#forum-nav{
+    width: 256px;
+    margin-right: 16px
+}
+
+#threads{
+    width: 100%;
+}
+
+#threads .thread{
+    --margin-v: 6px;
+    margin-top: var(--margin-v);
+    margin-bottom: var(--margin-v);
+    margin: calc(2 * var(--margin-v));
+    padding: 12px;
+}
+#threads h2{
+    margin: 0;
+}
+
+.like-count::before{
+    content: "* "
+}
+
+.comment-count::before{
+    content: "/ "
+}
+
+/*#endregion */
+
+#home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page .jumbotron{
+    background: inherit;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+#home-page .jumbotron h2{
+    margin: 0;
+}
+
+#home-page .jumbotron .wrapper{
+    padding: 12px;
+    min-height: 256px;
+}
+
+
+/* Sidebar */
+.ignore-click{
+    pointer-events: none;
+}

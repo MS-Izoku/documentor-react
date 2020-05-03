@@ -11,10 +11,10 @@ import 'mdbreact/dist/css/mdb.css';
 
 import "./css/App.scss"
 
-import './index.css';
-import './App.css'
-import './css/Neumorphic.css'
-import "./css/QuickFlexgrid.css"
+// import './index.css';
+// import './App.css'
+// import './css/Neumorphic.css'
+// import "./css/QuickFlexgrid.css"
 //#endregion
 
 import App from './App';
