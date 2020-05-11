@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AppHeader from './Containers/AppHeader';
 import AppFooter from './Containers/AppFooter';
-import { baseURL } from './services/asyncHelper';
+import { baseURL , configSiteLinks} from './services/asyncHelper';
 import LoginModal from './Containers/LoginModal';
 import Sidebar from './Components/Sidebar';
 
@@ -85,8 +85,8 @@ class App extends Component {
 				<Route exact path="/" component={HomePage} />
 				<Route exact path="/forums">
 					<ForumHomePage />
-					<Route path="/threads/:categoryName" component={ForumThreadIndex}>
-						<Route path="/:threadId" component={ForumThreadViewPage} />
+					<Route path={configSiteLinks.forumThreadIndex().route} component={ForumThreadIndex}>
+						<Route path={configSiteLinks.forumThreadIndex().route} component={ForumThreadViewPage} />
 					</Route>
 				</Route>
 				<Route path="/create-account">

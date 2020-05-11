@@ -1,18 +1,37 @@
-export const baseURL = "http://localhost:3000/";
+export const baseURL = 'http://localhost:3000';
 
-const configSiteLinks = {
-    home: "/",
-    forums: "/forums",
-    forumThreadIndex: (categoryID) => `/threads/${categoryID}`,
+// Used for the router
+export const configSiteLinks = {
+	home: '/',
+	forums: '/forums',
+	forumThreadIndex: (categoryId = 0) => {
+		return Object.assign(
+			{},
+			{
+				create: () => `/threads/${categoryId}`,
+				route: '/threads/:categoryId',
+			}
+		);
+	},
+	forumThread: (threadId = 0, categoryId = 0) => {
+		return Object.assign(
+			{},
+			{
+				route: '/threads/:categoryId/:threadId',
+				create: () => this.forumThreadIndex(categoryId).create() + `/threads/` + threadId,
+			}
+		);
+	},
+};
 
-}
+// Categories Page
+export const forumThreadIndexLink = (categoryId) =>
+	configSiteLinks.forums + configSiteLinks.forumThreadIndex(categoryId);
 
-export const forumLink = baseURL + "/forums"
+// Go To specific thread
+// pattern is  "/forums/threads/:categoryId/:threadId"
+export const forumThreadLink = (categoryId, threadId) => forumThreadLink(categoryId) + `/${threadId}`;
 
-export const getThreadLink = (categoryID) => baseURL + configSiteLinks.forums + configSiteLinks.forumThreadIndex(categoryID)
-
-
-
-export const formatProjectJson = () =>{
-    return {}
-}
+export const formatProjectJson = () => {
+	return {};
+};
