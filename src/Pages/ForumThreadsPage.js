@@ -23,8 +23,17 @@ class ForumThreadsPage extends Component{
     render(){
         return <div className="page-area">
             <h2>{this.state.title}</h2>
+            <div className="wrapper mx-2 neu-container">
+                {this.state.threads.map(thread => <ForumThread thread={thread} />)}
+            </div>
         </div>
     }
+}
+
+const ForumThread = (props) =>{
+    return <div>
+        <h3>{props.thread.title}</h3>
+    </div>
 }
 
 export default withRouter(ForumThreadsPage)
