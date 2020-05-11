@@ -32,7 +32,8 @@ class ForumThreadsPage extends Component{
 
 const ForumThread = (props) =>{
     return <div>
-        <h3>{props.thread.title}</h3>
+        <h3>{props.thread.title !== undefined ? props.thread.title : "ForumThread"}</h3>
+        <p>{props.thread.content !== undefined ? props.thread.title: "ForumThread Content"}</p>
     </div>
 }
 

@@ -11,7 +11,8 @@ import CreateAccountPage from './Pages/CreateAccountPage';
 import Error404Page from './Pages/Error404Page';
 import HomePage from './Pages/HomePage';
 import ForumHomePage from './Pages/ForumHomePage';
-import ForumThreadsPage from './Pages/ForumThreadsPage';
+import ForumThreadIndex from './Pages/ForumThreadIndex';
+import ForumThreadViewPage from './Pages/ForumThreadViewPage'
 ////#endregion
 
 class App extends Component {
@@ -84,7 +85,9 @@ class App extends Component {
 				<Route exact path="/" component={HomePage} />
 				<Route exact path="/forums">
 					<ForumHomePage />
-					<Route path="/threads/:id" component={ForumThreadsPage} />
+					<Route path="/threads/:categoryName" component={ForumThreadIndex}>
+						<Route path="/:threadId" component={ForumThreadViewPage} />
+					</Route>
 				</Route>
 				<Route path="/create-account">
 					<CreateAccountPage login={this.login} />
